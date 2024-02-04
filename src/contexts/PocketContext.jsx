@@ -3,12 +3,17 @@ import PocketBase from "pocketbase";
 import {jwtDecode} from "jwt-decode";
 import ms from "ms";
 import {useInterval} from "usehooks-ts";
+import PropTypes from "prop-types";
 
 const BASE_URL = "http://127.0.0.1:8090";
 const fiveMinutesInMS = ms("5 minutes");
 const twoMinutesInMS = ms("2 minutes");
 
 const PocketContext = createContext({});
+
+PocketProvider.proptypes = {
+    children: PropTypes.node.isRequired
+};
 
 export const PocketProvider = ({children}) => {
     const pb = useMemo(() => new PocketBase(BASE_URL), []);
