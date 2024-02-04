@@ -11,10 +11,6 @@ const twoMinutesInMS = ms("2 minutes");
 
 const PocketContext = createContext({});
 
-PocketProvider.proptypes = {
-    children: PropTypes.node.isRequired
-};
-
 export const PocketProvider = ({children}) => {
     const pb = useMemo(() => new PocketBase(BASE_URL), []);
     const [token, setToken] = useState(pb.authStore.token);
