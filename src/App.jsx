@@ -1,6 +1,6 @@
 import React from "react";
 
-import {BrowserRouter, Routes, Route} from 'react-router-dom';
+import {BrowserRouter, Route, Routes} from 'react-router-dom';
 import {SignIn} from "./pages/Signin.jsx";
 import {SignUp} from "./pages/Signup.jsx";
 import {Protected} from "./pages/Protected.jsx";
@@ -8,7 +8,13 @@ import {RequireAuth} from "./components/RequireAuth.jsx";
 
 import {PocketProvider} from "./contexts/PocketContext.jsx";
 import {Box, Header, Heading, Page, PageContent} from "grommet";
-import {Code, Technology, Test} from "grommet-icons";
+import {Test} from "grommet-icons";
+import PropTypes from "prop-types";
+
+AppBar.propTypes = {
+    appIcon: PropTypes.node.isRequired,
+    appName: PropTypes.string.isRequired
+}
 const AppBar = ({appIcon,appName}) =>(
     <Header pad={{left: "small", right: "small", vertical: "xxsmall"}}>
         <Box flex={false} direction="row" align="center" >
