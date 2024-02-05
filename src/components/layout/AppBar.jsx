@@ -11,12 +11,12 @@ export default function AppBar({ appName }, props) {
   };
   return (
     <Box>
-      <Container maxW="large" centerContent p={4} maxH={8}>
-        <Box maxW="sm" display={'flex'} alignItems={'baseline'}>
+      <Container maxW="large" centerContent>
+        <Box p={4} maxW="sm" display={'flex'} alignItems={'baseline'}>
           <Box mr={2}>
             <CircuitBoard color={'coral'} size={32} />
           </Box>
-          <Heading mb={4} fontStyle={'oblique'} fontWeight={'200'}>
+          <Heading mb={4} fontWeight={'200'}>
             {appName}
           </Heading>
         </Box>
