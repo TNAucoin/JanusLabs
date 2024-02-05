@@ -1,16 +1,14 @@
-import React from "react";
+import React from 'react';
 
-import {usePocket} from "../contexts/PocketContext";
-import {Button} from "grommet";
+import { usePocket } from '../contexts/PocketContext';
+import { Container } from '@chakra-ui/react';
 
 export const Protected = () => {
-    const {user, logout} = usePocket();
+  const { user, logout } = usePocket();
 
-    return (
-        <div>
-            <h1>Protected</h1>
-            <p>Welcome {user.email}</p>
-            <Button onClick={logout}>Logout</Button>
-        </div>
-    )
-}
+  return (
+    <Container maxW={'100%'}>
+      <h1>Protected</h1>
+    </Container>
+  );
+};
