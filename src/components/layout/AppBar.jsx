@@ -25,7 +25,7 @@ export default function AppBar({ appName }) {
           <Flex ml={'auto'} p={6}>
             <CircleUserRound />
             <Box ml="2">
-              <Text fontWeight="300" color={'coral'} fontSize={'sm'}>
+              <Text fontWeight="400" fontSize={'sm'}>
                 {user.email}
               </Text>
             </Box>

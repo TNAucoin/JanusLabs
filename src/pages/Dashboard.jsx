@@ -7,7 +7,14 @@ export const Dashboard = () => {
   return (
     <div>
       <Box mr={'auto'}>
-        <Heading fontWeight={350} fontSize={'x-large'} mt={4} mb={4} ml={6}>
+        <Heading
+          fontWeight={350}
+          fontSize={'x-large'}
+          mt={4}
+          mb={4}
+          ml={6}
+          color={'coral'}
+        >
           Dashboard
         </Heading>
       </Box>

@@ -12,8 +12,8 @@ export const StatCard = ({ title, arrowType, value, icon }) => {
   return (
     <Container
       borderWidth={'1px'}
+      bg={'#EDF2F7'}
       borderRadius={'lg'}
-      borderColor={'black'}
       maxW={280}
       display={'flex'}
       flexDirection={'column'}
