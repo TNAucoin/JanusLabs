@@ -1,28 +1,38 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Box, Container, Heading } from '@chakra-ui/react';
-import { AppMenu } from '../AppMenu.jsx';
-import { CircuitBoard } from 'lucide-react';
+import { Box, Container, Flex, Heading, Text } from '@chakra-ui/react';
+import { CircleUserRound, CircuitBoard } from 'lucide-react';
+import { usePocket } from '../../contexts/PocketContext.jsx';
+import { AppMenu } from './AppMenu.jsx';
 
-export default function AppBar({ appName }, props) {
+export default function AppBar({ appName }) {
+  const { user } = usePocket();
   AppBar.propTypes = {
     appName: PropTypes.string.isRequired,
-    children: PropTypes.node.isRequired,
   };
   return (
     <Box>
-      <Container maxW="large" centerContent>
-        <Box p={4} maxW="sm" display={'flex'} alignItems={'baseline'}>
-          <Box mr={2}>
-            <CircuitBoard color={'coral'} size={32} />
+      <Container maxW={'100%'} display={'flex'}>
+        <Box display={'flex'} mt={4} ml={1}>
+          <Box p={1}>
+            <CircuitBoard color={'coral'} size={34} />
           </Box>
           <Heading mb={4} fontWeight={'200'}>
             {appName}
           </Heading>
         </Box>
+        {user && (
+          <Flex ml={'auto'} p={6}>
+            <CircleUserRound />
+            <Box ml="2">
+              <Text fontWeight="300" color={'coral'} fontSize={'sm'}>
+                {user.email}
+              </Text>
+            </Box>
+          </Flex>
+        )}
       </Container>
-      <AppMenu />
-      <Container maxW={'lg'}>{props.children}</Container>
+      {user && <AppMenu />}
     </Box>
   );
 }

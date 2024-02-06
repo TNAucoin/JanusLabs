@@ -5,7 +5,7 @@ import { usePocket } from '../contexts/PocketContext';
 import {
   Box,
   Button,
-  Container,
+  Center,
   Divider,
   FormControl,
   FormLabel,
@@ -27,40 +27,42 @@ export const SignIn = () => {
       } catch (error) {
         console.error(error);
       }
-      navigate('/protected');
+      navigate('/dashboard');
     },
     [login]
   );
-
+  console.log('SignIn');
   return (
-    <Container maxW={'100%'} mt={'8'} centerContent>
-      <Box w={'lg'} borderWidth={'2px'} borderRadius={'lg'}>
-        <Box p={'8'}>
-          <Box display={'flex'} justifyContent={'center'} mb={4}>
-            <Heading size={'lg'} fontStyle={'italic'} fontWeight={'300'}>
-              Sign In
-            </Heading>
-          </Box>
-          <Divider mb={'8'} />
-          <Box display={'flex'} justifyContent={'center'}>
-            <FormControl display={'flex-column'}>
-              <Box mb={'4'}>
-                <FormLabel>Email</FormLabel>
-                <Input type={'email'} ref={emailRef} />
-              </Box>
-              <Box mb={'8'}>
-                <FormLabel>Password</FormLabel>
-                <Input type={'password'} ref={passwordRef} />
-              </Box>
-            </FormControl>
-          </Box>
-          <Box display={'flex'} justifyContent={'center'} mt={2}>
-            <Button w={'lg'} colorScheme={'orange'} onClick={handleOnSubmit}>
-              Sign In
-            </Button>
+    <Box w={'100%'} h={'100%'} overflow={'hidden'}>
+      <Center>
+        <Box w={'lg'} borderWidth={'2px'} borderRadius={'lg'}>
+          <Box p={'8'}>
+            <Box display={'flex'} justifyContent={'center'} mb={4}>
+              <Heading size={'lg'} fontStyle={'italic'} fontWeight={'300'}>
+                Sign In
+              </Heading>
+            </Box>
+            <Divider mb={'8'} />
+            <Box display={'flex'} justifyContent={'center'}>
+              <FormControl display={'flex-column'}>
+                <Box mb={'4'}>
+                  <FormLabel>Email</FormLabel>
+                  <Input type={'email'} ref={emailRef} />
+                </Box>
+                <Box mb={'8'}>
+                  <FormLabel>Password</FormLabel>
+                  <Input type={'password'} ref={passwordRef} />
+                </Box>
+              </FormControl>
+            </Box>
+            <Box display={'flex'} justifyContent={'center'} mt={2}>
+              <Button w={'lg'} colorScheme={'orange'} onClick={handleOnSubmit}>
+                Sign In
+              </Button>
+            </Box>
           </Box>
         </Box>
-      </Box>
-    </Container>
+      </Center>
+    </Box>
   );
 };

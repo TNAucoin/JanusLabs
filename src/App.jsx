@@ -8,21 +8,25 @@ import { RequireAuth } from './components/RequireAuth.jsx';
 
 import { PocketProvider } from './contexts/PocketContext.jsx';
 import AppBar from './components/layout/AppBar.jsx';
+import { Dashboard } from './pages/Dashboard.jsx';
+import { ChakraProvider } from '@chakra-ui/react';
 
 export const App = () => {
   return (
-    <PocketProvider>
-      <AppBar appName="JanusLabs">
+    <ChakraProvider>
+      <PocketProvider>
         <BrowserRouter>
+          <AppBar appName={'JanusLabs'} />
           <Routes>
-            <Route path={'/login'} element={<SignIn />} />
+            <Route path={'/'} element={<SignIn />} />
             <Route path={'/signup'} element={<SignUp />} />
             <Route element={<RequireAuth />}>
+              <Route path={'/dashboard'} element={<Dashboard />} />
               <Route path={'/protected'} element={<Protected />} />
             </Route>
           </Routes>
         </BrowserRouter>
-      </AppBar>
-    </PocketProvider>
+      </PocketProvider>
+    </ChakraProvider>
   );
 };
