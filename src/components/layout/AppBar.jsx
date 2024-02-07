@@ -13,7 +13,7 @@ export default function AppBar({ appName }) {
   return (
     <Box>
       <Container maxW={'100%'} display={'flex'}>
-        <Box display={'flex'} mt={4} ml={1}>
+        <Box display={'flex'} mt={4} ml={1} mb={4}>
           <Box p={1}>
             <CircuitBoard color={'coral'} size={34} />
           </Box>

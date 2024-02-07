@@ -6,12 +6,14 @@ import { SignUp } from './pages/Signup.jsx';
 import { Protected } from './pages/Protected.jsx';
 import { RequireAuth } from './components/RequireAuth.jsx';
 
-import { PocketProvider } from './contexts/PocketContext.jsx';
+import { PocketProvider, usePocket } from './contexts/PocketContext.jsx';
 import AppBar from './components/layout/AppBar.jsx';
 import { Dashboard } from './pages/Dashboard.jsx';
 import { ChakraProvider } from '@chakra-ui/react';
+import { Create } from './pages/Create.jsx';
 
 export const App = () => {
+  const { user } = usePocket();
   return (
     <ChakraProvider>
       <PocketProvider>
@@ -22,6 +24,7 @@ export const App = () => {
             <Route path={'/signup'} element={<SignUp />} />
             <Route element={<RequireAuth />}>
               <Route path={'/dashboard'} element={<Dashboard />} />
+              <Route path={'/create'} element={<Create />} />
               <Route path={'/protected'} element={<Protected />} />
             </Route>
           </Routes>

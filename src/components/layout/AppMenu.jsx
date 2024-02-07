@@ -16,6 +16,11 @@ export const AppMenu = () => {
     console.log('Dashboard');
     navigate('/dashboard');
   };
+  const handleCreate = evt => {
+    evt.preventDefault();
+    console.log('Dashboard');
+    navigate('/create');
+  };
   console.log('AppMenu');
   return (
     <Container pb={2} borderBottomWidth={2} maxW={'100%'} display={'flex'}>
@@ -23,7 +28,7 @@ export const AppMenu = () => {
         <Button variant={'ghost'} size={'sm'} onClick={handleDashboard}>
           Dashboard
         </Button>
-        <Button variant={'ghost'} size={'sm'}>
+        <Button variant={'ghost'} size={'sm'} onClick={handleCreate}>
           Create
         </Button>
         <Button variant={'ghost'} size={'sm'}>

@@ -1,23 +1,16 @@
-import { Box, Divider, Flex, Heading } from '@chakra-ui/react';
+import { Divider, Flex } from '@chakra-ui/react';
 import { StatCard } from '../components/cards/StatCard.jsx';
 import React from 'react';
 import { Boxes, BoxIcon, EyeIcon, HeartCrackIcon, Rocket } from 'lucide-react';
+import { PageTitleComponent } from '../components/layout/PageTitleComponent.jsx';
 
 export const Dashboard = () => {
   return (
     <div>
-      <Box mr={'auto'}>
-        <Heading
-          fontWeight={350}
-          fontSize={'x-large'}
-          mt={4}
-          mb={4}
-          ml={6}
-          color={'coral'}
-        >
-          Dashboard
-        </Heading>
-      </Box>
+      <PageTitleComponent
+        title={'Dashboard'}
+        subtitle={'Overview of the Janus System'}
+      />
       <Flex
         display={'flex'}
         justifyContent={'space-between'}

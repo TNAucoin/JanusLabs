@@ -1,4 +1,4 @@
-import React, { useCallback, useRef } from 'react';
+import React, { useCallback, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import { usePocket } from '../contexts/PocketContext';
@@ -16,7 +16,7 @@ import {
 export const SignIn = () => {
   const emailRef = useRef();
   const passwordRef = useRef();
-  const { login } = usePocket();
+  const { login, user } = usePocket();
   const navigate = useNavigate();
 
   const handleOnSubmit = useCallback(
@@ -31,6 +31,11 @@ export const SignIn = () => {
     },
     [login]
   );
+  useEffect(() => {
+    if (user) {
+      navigate('/dashboard');
+    }
+  });
   console.log('SignIn');
   return (
     <Box w={'100%'} h={'100%'} overflow={'hidden'}>
