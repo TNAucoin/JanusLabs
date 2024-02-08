@@ -10,8 +10,14 @@ import {
 } from '@chakra-ui/react';
 import { BoxIcon } from 'lucide-react';
 
-export const ValueSlider = ({ startValue, maxValue, minValue, step }) => {
-  const [sliderValue, setSliderValue] = React.useState(startValue);
+export const ValueSlider = ({
+  value,
+  setValue,
+  startValue,
+  maxValue,
+  minValue,
+  step,
+}) => {
   const [showTooltip, setShowTooltip] = React.useState(false);
   // Create SliderMarks
   const sliderMarks = Array.from(
@@ -30,7 +36,7 @@ export const ValueSlider = ({ startValue, maxValue, minValue, step }) => {
       min={minValue}
       max={maxValue}
       colorScheme="orange"
-      onChange={v => setSliderValue(v)}
+      onChange={v => setValue(v)}
       onMouseEnter={() => setShowTooltip(true)}
       onMouseLeave={() => setShowTooltip(false)}
     >
@@ -44,7 +50,7 @@ export const ValueSlider = ({ startValue, maxValue, minValue, step }) => {
         color="white"
         placement="top"
         isOpen={showTooltip}
-        label={`${sliderValue}`}
+        label={`${value}`}
       >
         <SliderThumb boxSize={6}>
           <Box>
