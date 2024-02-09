@@ -13,15 +13,17 @@ export const AppMenu = () => {
   };
   const handleDashboard = evt => {
     evt.preventDefault();
-    console.log('Dashboard');
     navigate('/dashboard');
   };
   const handleCreate = evt => {
     evt.preventDefault();
-    console.log('Dashboard');
     navigate('/create');
   };
-  console.log('AppMenu');
+  const handleQueue = evt => {
+    evt.preventDefault();
+    navigate('/queue');
+  };
+
   return (
     <Container pb={2} borderBottomWidth={2} maxW={'100%'} display={'flex'}>
       <Stack direction="row" spacing={4}>
@@ -31,7 +33,7 @@ export const AppMenu = () => {
         <Button variant={'ghost'} size={'sm'} onClick={handleCreate}>
           Create
         </Button>
-        <Button variant={'ghost'} size={'sm'}>
+        <Button variant={'ghost'} size={'sm'} onClick={handleQueue}>
           Queue
         </Button>
         <Button variant={'ghost'} size={'sm'} onClick={handleLogout}>

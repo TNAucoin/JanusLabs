@@ -1,5 +1,6 @@
 import React from 'react';
-
+import 'ag-grid-community/styles/ag-grid.css'; // Core CSS
+import 'ag-grid-community/styles/ag-theme-quartz.css'; // Theme
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { SignIn } from './pages/Signin.jsx';
 import { SignUp } from './pages/Signup.jsx';
@@ -12,6 +13,7 @@ import { Dashboard } from './pages/Dashboard.jsx';
 import { ChakraProvider } from '@chakra-ui/react';
 import { Create } from './pages/Create.jsx';
 import { JanusProvider } from './contexts/JanusContext.jsx';
+import { Queue } from './pages/Queue.jsx';
 
 export const App = () => {
   return (
@@ -26,6 +28,7 @@ export const App = () => {
               <Route element={<RequireAuth />}>
                 <Route path={'/dashboard'} element={<Dashboard />} />
                 <Route path={'/create'} element={<Create />} />
+                <Route path={'/queue'} element={<Queue />} />
                 <Route path={'/protected'} element={<Protected />} />
               </Route>
             </Routes>

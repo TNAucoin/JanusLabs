@@ -6,6 +6,7 @@ import { usePocket } from '../../contexts/PocketContext.jsx';
 import { AppMenu } from './AppMenu.jsx';
 
 export default function AppBar({ appName }) {
+  console.log('AppBar');
   const { user } = usePocket();
   AppBar.propTypes = {
     appName: PropTypes.string.isRequired,
